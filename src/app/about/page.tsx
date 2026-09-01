@@ -37,7 +37,7 @@ export default function AboutPage() {
                 Currently, I'm an undergraduate student studying Electrical and Computer 
                 Engineering at Cornell University in Ithaca, New York. I am also pursuing
                 a minor in physics and involved in undergraduate research as well as 
-                Cornell Outdoor Education.
+                an engineering project team.
               </p>
 
             </div>
@@ -48,13 +48,13 @@ export default function AboutPage() {
           <h2 className="text-2xl text-[#ffb000]">Interests</h2>
 
           <p className="mt-3 text-gray-300">
-            I'm primarily interested in working more with embedded systems and intelligent 
-            robotics, as well as learning more about the physical architecture behind 
-            machine learning systems. I disagree with the sentiment that optimizing 
-            efficiency is the be-all end-all, and think that progress in innovation should be 
-            measured by how much we can improve lives rather than throughput. In my career, 
-            I want to strive toward a human-centered approach to engineering that makes room 
-            for creativity.
+            I'm primarily interested in working more with digital design and 
+            embedded systems, as well as learning more about the physical architecture 
+            behind machine learning systems. In my career, I want to strive toward a 
+            human-centered approach to engineering that leaves room for creativity.
+            I think that progress in innovation should be measured by how much we can 
+            improve individual lives, and that optimizing efficiency should not be 
+            the be-all end-all.
           </p>
 
         </section>
@@ -86,7 +86,7 @@ export default function AboutPage() {
             </div>
 
             <div className="pt-3 text-gray-400">
-              Currently on UTC-8/-7 PT!
+              Currently on UTC-5/-4 ET!
             </div>
             
           </div>
