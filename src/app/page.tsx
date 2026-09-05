@@ -58,7 +58,7 @@ const projects: Project[] = [
     id: "turing-simulations",
     title: "Turing Pattern Simulations",
     href: "/projects/turing-simulations",
-    description: `Extended Fourier and spectral analysis tools for simulating morphogenesis 
+    description: `Extended Fourier and spectral analysis tools for simulating morphogenesis
     patterns and integrated real-time interactive hardware visualization.`,
     tech: ["Git", "UART", "C++"],
   },
@@ -93,7 +93,10 @@ export default function Home() {
     };
 
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [active, router]);
 
   useEffect(() => {
@@ -107,12 +110,14 @@ export default function Home() {
     };
 
     window.addEventListener("mousedown", handleClick);
-    return () =>
+
+    return () => {
       window.removeEventListener("mousedown", handleClick);
+    };
   }, []);
 
   return (
-    <main className="min-h-screen bg-background text-foreground px-6 py-10">
+    <main className="min-h-screen bg-background px-6 py-10 text-foreground">
       <section className="mx-auto max-w-5xl">
         <div className="grid gap-10 md:grid-cols-[220px_1fr] md:items-center">
           <div>
@@ -189,29 +194,38 @@ export default function Home() {
           Featured Projects
         </h2>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-6 divide-y divide-border border-y border-border">
           {featuredProjects.map((project) => (
-            <Link
+            <article
               key={project.id}
-              href={project.href}
-              className="block rounded border border-border p-5 transition duration-200 hover:border-accent hover:bg-surface"
+              className="py-7"
             >
-              <h3 className="text-xl text-accent">
-                {project.title}
-              </h3>
+              <Link
+                href={project.href}
+                className="group inline-block"
+              >
+                <h3 className="text-xl text-accent group-hover:underline">
+                  {project.title}
+                </h3>
+              </Link>
 
-              <p className="mt-2 text-muted">
+              <p className="mt-3 max-w-3xl text-muted">
                 {project.description}
               </p>
 
-              <p className="mt-4 font-terminal text-sm text-secondary">
-                {project.tech.join(" · ")}
-              </p>
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+                <p className="font-terminal text-sm text-secondary">
+                  {project.tech.join(" · ")}
+                </p>
 
-              <p className="mt-6 font-terminal text-sm text-accent">
-                View project →
-              </p>
-            </Link>
+                <Link
+                  href={project.href}
+                  className="font-terminal text-sm text-accent hover:underline"
+                >
+                  View project →
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </section>
