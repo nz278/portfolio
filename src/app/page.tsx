@@ -28,7 +28,7 @@ const projects: Project[] = [
     href: "/projects/construction-robot",
     description: `Built mechanical chassis with 3D-printed mounts and created a
     Python library for controlling motor servos via RS485 serial communication.`,
-    tech: [ "Onshape", "Python", "Raspberry Pi"],
+    tech: ["Onshape", "Python", "Raspberry Pi"],
   },
   {
     id: "crc-risk",
@@ -112,11 +112,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#111111] text-[#e8e8e8] font-mono px-6 py-10">
+    <main className="min-h-screen bg-background text-foreground px-6 py-10">
       <section className="mx-auto max-w-5xl">
         <div className="grid gap-10 md:grid-cols-[220px_1fr] md:items-center">
           <div>
-            <div className="border border-[#00ff99] bg-[#181818] p-3">
+            <div className="border border-accent bg-surface p-3">
               <div className="mb-3 flex gap-2">
                 <div className="h-3 w-3 rounded-full bg-red-500" />
                 <div className="h-3 w-3 rounded-full bg-yellow-500" />
@@ -133,13 +133,15 @@ export default function Home() {
               />
             </div>
 
-            <p className="mt-3 text-center text-sm text-gray-400">
+            <p className="mt-3 text-center text-sm text-muted">
               /WA/Seattle/WoodlandParkZoo
             </p>
           </div>
 
           <div>
-            <p className="text-[#00ff99]">nicole@portfolio:~$ whoami</p>
+            <p className="font-terminal text-accent">
+              nicole@portfolio:~$ whoami
+            </p>
 
             <h1
               ref={titleRef}
@@ -148,7 +150,7 @@ export default function Home() {
             >
               Nicole Zhou
               <span
-                className={`text-[#00ff99] ${
+                className={`font-terminal text-accent ${
                   active ? "animate-cursor-blink" : ""
                 }`}
               >
@@ -156,14 +158,14 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mt-4 max-w-xl text-lg text-gray-300">
+            <p className="mt-4 max-w-xl text-lg text-muted">
               ECE undergraduate at Cornell University interested in embedded
               systems, PCB design, autonomous robotics, and physical computing.
             </p>
 
             <div className="mt-8 flex gap-4">
               <a
-                className="border border-[#00ff99] px-4 py-2 text-[#00ff99] transition hover:bg-[#00ff99] hover:text-black"
+                className="border border-accent px-4 py-2 text-accent transition hover:bg-accent hover:text-background"
                 href="https://github.com/nz278"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -172,7 +174,7 @@ export default function Home() {
               </a>
 
               <a
-                className="border border-gray-500 px-4 py-2 transition hover:border-white"
+                className="border border-border px-4 py-2 transition hover:border-foreground"
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -183,7 +185,7 @@ export default function Home() {
           </div>
         </div>
 
-        <h2 className="mt-16 text-2xl text-[#ffb000]">
+        <h2 className="mt-16 text-2xl text-secondary">
           Featured Projects
         </h2>
 
@@ -192,21 +194,21 @@ export default function Home() {
             <Link
               key={project.id}
               href={project.href}
-              className="block rounded border border-gray-700 p-5 transition duration-200 hover:border-[#00ff99] hover:bg-[#181818]"
+              className="block rounded border border-border p-5 transition duration-200 hover:border-accent hover:bg-surface"
             >
-              <h3 className="text-xl text-[#00ff99]">
+              <h3 className="text-xl text-accent">
                 {project.title}
               </h3>
 
-              <p className="mt-2 text-gray-300">
+              <p className="mt-2 text-muted">
                 {project.description}
               </p>
 
-              <p className="mt-4 text-sm text-[#ffb000]">
+              <p className="mt-4 font-terminal text-sm text-secondary">
                 {project.tech.join(" · ")}
               </p>
 
-              <p className="mt-6 text-sm text-[#00ff99]">
+              <p className="mt-6 font-terminal text-sm text-accent">
                 View project →
               </p>
             </Link>

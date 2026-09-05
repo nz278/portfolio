@@ -3,14 +3,17 @@ import Sidebar from "../../components/Sidebar";
 
 export default function ConstructionRobotPage() {
   return (
-    <main className="min-h-screen bg-[#111111] px-6 py-10 font-mono text-[#e8e8e8]">
+    <main className="min-h-screen bg-background px-6 py-10 text-foreground">
       <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[minmax(0,640px)_220px]">
         <article className="max-w-[640px]">
-          <Link href="/" className="text-[#00ff99] hover:underline">
+          <Link
+            href="/"
+            className="font-terminal text-accent hover:underline"
+          >
             ← Back home
           </Link>
 
-          <p className="mt-8 text-[#00ff99]">
+          <p className="mt-8 font-terminal text-accent">
             nicole@portfolio:~/projects/construction-robot$ cat README.md
           </p>
 
@@ -18,20 +21,20 @@ export default function ConstructionRobotPage() {
             Autonomous Construction Robot
           </h1>
 
-          <p className="mt-4 text-gray-300">
+          <p className="mt-4 text-muted">
             Built a mechanical chassis with 3D-printed mounts and created a
             Python library for controlling motor servos via RS485 serial
             communication.
           </p>
 
-          <p className="mt-6 text-sm text-[#ffb000]">
+          <p className="mt-6 font-terminal text-sm text-secondary">
             Python · Onshape · Raspberry Pi
           </p>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Overview</h2>
+            <h2 className="text-2xl text-secondary">Overview</h2>
 
-            <p className="mt-3 text-gray-300">
+            <p className="mt-3 text-muted">
               The purpose of this project was to build an autonomous mobile
               robot designed as a platform for future construction and
               material-handling tasks. All development was completed as part of
@@ -41,9 +44,9 @@ export default function ConstructionRobotPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Mechanical</h2>
+            <h2 className="text-2xl text-secondary">Mechanical</h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 The physical robot consists of a custom chassis built using a
                 combination of 3D-printed components and existing hardware. For
@@ -58,9 +61,9 @@ export default function ConstructionRobotPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Electrical</h2>
+            <h2 className="text-2xl text-secondary">Electrical</h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 For the initial prototype, I mounted a terminal strip to the
                 main frame that distributes power in parallel from a five-cell
@@ -74,16 +77,16 @@ export default function ConstructionRobotPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Software</h2>
+            <h2 className="text-2xl text-secondary">Software</h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 The software stack centers around a custom Python{" "}
                 <a
                   href="https://github.com/nz278/ddsm115-driver"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#00ff99] hover:underline"
+                  className="text-accent hover:underline"
                 >
                   library
                 </a>{" "}
@@ -103,7 +106,7 @@ export default function ConstructionRobotPage() {
                 <video
                   controls
                   preload="metadata"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 >
                   <source
                     src="/construction-robot/motor-demo.mp4"
@@ -112,7 +115,7 @@ export default function ConstructionRobotPage() {
                   Your browser does not support the video tag.
                 </video>
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Video 1. Individual motor and shared controller demo
                 </figcaption>
               </figure>

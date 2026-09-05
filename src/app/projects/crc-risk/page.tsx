@@ -3,14 +3,17 @@ import Sidebar from "../../components/Sidebar";
 
 export default function CRCRiskPage() {
   return (
-    <main className="min-h-screen bg-[#111111] px-6 py-10 font-mono text-[#e8e8e8]">
+    <main className="min-h-screen bg-background px-6 py-10 text-foreground">
       <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[minmax(0,640px)_220px]">
         <article className="max-w-[640px]">
-          <Link href="/" className="text-[#00ff99] hover:underline">
+          <Link
+            href="/"
+            className="font-terminal text-accent hover:underline"
+          >
             ← Back home
           </Link>
 
-          <p className="mt-8 text-[#00ff99]">
+          <p className="mt-8 font-terminal text-accent">
             nicole@portfolio:~/projects/crc-risk$ cat README.md
           </p>
 
@@ -18,19 +21,19 @@ export default function CRCRiskPage() {
             Colorectal Cancer Risk Prediction
           </h1>
 
-          <p className="mt-4 text-gray-300">
+          <p className="mt-4 text-muted">
             Developed supervised machine learning models with feature selection
             techniques to predict colorectal cancer risk using multiomic data.
           </p>
 
-          <p className="mt-6 text-sm text-[#ffb000]">
+          <p className="mt-6 font-terminal text-sm text-secondary">
             Python · Neural Networks · Data Analysis
           </p>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Overview</h2>
+            <h2 className="text-2xl text-secondary">Overview</h2>
 
-            <p className="mt-3 text-gray-300">
+            <p className="mt-3 text-muted">
               Throughout my internship at the Dey Lab at the Fred Hutchinson
               Cancer Center, I was primarily involved in analyzing multiomic
               data acquired from a sample of Alaska Native people with the goal
@@ -44,11 +47,11 @@ export default function CRCRiskPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">
+            <h2 className="text-2xl text-secondary">
               Data Preprocessing
             </h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 Batch normalization and imputation were used during
                 preprocessing to account for variability and missing values. In
@@ -75,11 +78,11 @@ export default function CRCRiskPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">
+            <h2 className="text-2xl text-secondary">
               Support Vector Machine
             </h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 One of the first control models we developed aimed to predict
                 CRC risk using only metabolite data and achieved a test accuracy
@@ -97,11 +100,11 @@ export default function CRCRiskPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">
+            <h2 className="text-2xl text-secondary">
               Multilayer Perceptron Neural Network
             </h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 The layered architecture of a neural network was well suited to
                 our goal of creating a single predictive framework for diverse
@@ -134,10 +137,10 @@ export default function CRCRiskPage() {
                 <img
                   src="/crc-risk/nn-performance-metrics.png"
                   alt="Performance metrics of neural network over epochs"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 1. Performance metrics of neural network over epochs
                 </figcaption>
               </figure>
@@ -145,11 +148,11 @@ export default function CRCRiskPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">
+            <h2 className="text-2xl text-secondary">
               Feature Selection and Model Testing
             </h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 The first method we attempted involved univariate feature
                 selection through an ANOVA F-test, which evaluated each
@@ -201,10 +204,10 @@ export default function CRCRiskPage() {
                 <img
                   src="/crc-risk/permutation-testing.png"
                   alt="Real-label versus permuted-label accuracy"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 2. Real-label versus permuted-label accuracy
                 </figcaption>
               </figure>
@@ -212,11 +215,11 @@ export default function CRCRiskPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">
+            <h2 className="text-2xl text-secondary">
               Bacterial and Sequencing Analysis
             </h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 The same process was carried out using data on the
                 concentrations of bacterial species in the samples. Summaries of
@@ -225,7 +228,7 @@ export default function CRCRiskPage() {
                   href="/crc-risk/top-bacterial-species-lit-review.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#00ff99] hover:underline"
+                  className="text-accent hover:underline"
                 >
                   top bacterial species
                 </a>{" "}
@@ -234,7 +237,7 @@ export default function CRCRiskPage() {
                   href="/crc-risk/top-metabolites-lit-review.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#00ff99] hover:underline"
+                  className="text-accent hover:underline"
                 >
                   top metabolites
                 </a>
@@ -246,10 +249,10 @@ export default function CRCRiskPage() {
                 <img
                   src="/crc-risk/bacteria-heatmap.png"
                   alt="Heatmap of Pearson coefficients between top metabolites and bacterial species"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 3. Heatmap of Pearson coefficients between top
                   metabolites and bacterial species
                 </figcaption>
@@ -286,10 +289,10 @@ export default function CRCRiskPage() {
                 <img
                   src="/crc-risk/pathway-analysis.png"
                   alt="Superpathway AUC distribution"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 4. Superpathway AUC distribution
                 </figcaption>
               </figure>

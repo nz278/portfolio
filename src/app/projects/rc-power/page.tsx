@@ -3,14 +3,17 @@ import Sidebar from "../../components/Sidebar";
 
 export default function RCPowerPage() {
   return (
-    <main className="min-h-screen bg-[#111111] px-6 py-10 font-mono text-[#e8e8e8]">
+    <main className="min-h-screen bg-background px-6 py-10 text-foreground">
       <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[minmax(0,640px)_220px]">
         <article className="max-w-[640px]">
-          <Link href="/" className="text-[#00ff99] hover:underline">
+          <Link
+            href="/"
+            className="font-terminal text-accent hover:underline"
+          >
             ← Back home
           </Link>
 
-          <p className="mt-8 text-[#00ff99]">
+          <p className="mt-8 font-terminal text-accent">
             nicole@portfolio:~/projects/rc-power$ cat README.md
           </p>
 
@@ -18,20 +21,20 @@ export default function RCPowerPage() {
             Embedded RC Power System
           </h1>
 
-          <p className="mt-4 text-gray-300">
+          <p className="mt-4 text-muted">
             Designed a custom PCB and physical housing for selective power
             cycling of onboard electronics for the Cornell Autonomous Sailboat
             project team.
           </p>
 
-          <p className="mt-6 text-sm text-[#ffb000]">
+          <p className="mt-6 font-terminal text-sm text-secondary">
             KiCad · PCB Design · Arduino
           </p>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Overview</h2>
+            <h2 className="text-2xl text-secondary">Overview</h2>
 
-            <p className="mt-3 text-gray-300">
+            <p className="mt-3 text-muted">
               During field testing, a remote-control power distribution system
               aims to improve recovery efficiency from subsystem faults while
               also eliminating delays caused by manually resetting onboard
@@ -40,9 +43,9 @@ export default function RCPowerPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Implementation</h2>
+            <h2 className="text-2xl text-secondary">Implementation</h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 The control panel continuously monitors system status while
                 transmitting commands to the boat that toggle power to specific
@@ -57,7 +60,7 @@ export default function RCPowerPage() {
                 <video
                   controls
                   preload="metadata"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 >
                   <source
                     src="/rc-power/breadboard-demo-alt.mp4"
@@ -66,7 +69,7 @@ export default function RCPowerPage() {
                   Your browser does not support the video tag.
                 </video>
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Video 1. Demonstration of breadboarded circuit
                 </figcaption>
               </figure>
@@ -75,10 +78,10 @@ export default function RCPowerPage() {
                 <img
                   src="/rc-power/boat-electronics-schematic.png"
                   alt="Schematic of boat electronics"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 1. Schematic of boat electronics
                 </figcaption>
               </figure>
@@ -99,10 +102,10 @@ export default function RCPowerPage() {
                 <img
                   src="/rc-power/control-flowchart.png"
                   alt="Diagram showing inputs and outputs from the RC and boat XBee modules"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 2. Diagram showing inputs and outputs from the RC and boat
                   XBee modules
                 </figcaption>
@@ -120,10 +123,10 @@ export default function RCPowerPage() {
                 <img
                   src="/rc-power/pcb-3d-model.png"
                   alt="Labeled PCB model"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 3. Labeled PCB model
                 </figcaption>
               </figure>

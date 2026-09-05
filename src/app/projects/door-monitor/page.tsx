@@ -3,14 +3,17 @@ import Sidebar from "../../components/Sidebar";
 
 export default function DoorMonitorPage() {
   return (
-    <main className="min-h-screen bg-[#111111] px-6 py-10 font-mono text-[#e8e8e8]">
+    <main className="min-h-screen bg-background px-6 py-10 text-foreground">
       <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[minmax(0,640px)_220px]">
         <article className="max-w-[640px]">
-          <Link href="/" className="text-[#00ff99] hover:underline">
+          <Link
+            href="/"
+            className="font-terminal text-accent hover:underline"
+          >
             ← Back home
           </Link>
 
-          <p className="mt-8 text-[#00ff99]">
+          <p className="mt-8 font-terminal text-accent">
             nicole@portfolio:~/projects/door-monitor$ cat README.md
           </p>
 
@@ -18,19 +21,19 @@ export default function DoorMonitorPage() {
             Automatic Door Monitoring System
           </h1>
 
-          <p className="mt-4 text-gray-300">
+          <p className="mt-4 text-muted">
             Created an automatic door monitoring system using a custom
             single-cycle RISC-V processor on a Cyclone V FPGA.
           </p>
 
-          <p className="mt-6 text-sm text-[#ffb000]">
+          <p className="mt-6 font-terminal text-sm text-secondary">
             FPGA · Verilog · RISC-V
           </p>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">Overview</h2>
+            <h2 className="text-2xl text-secondary">Overview</h2>
 
-            <p className="mt-3 text-gray-300">
+            <p className="mt-3 text-muted">
               For my ECE 2300 Digital Logic and Computer Organization final
               course project, my partner and I developed an automatic door
               monitoring system using a custom single-cycle RISC-V processor
@@ -43,11 +46,11 @@ export default function DoorMonitorPage() {
           </section>
 
           <section className="mt-10">
-            <h2 className="text-2xl text-[#ffb000]">
+            <h2 className="text-2xl text-secondary">
               Design and Implementation
             </h2>
 
-            <div className="mt-3 space-y-6 text-gray-300">
+            <div className="mt-3 space-y-6 text-muted">
               <p>
                 In addition to the processor datapath and control logic, my
                 partner and I developed several memory-mapped peripherals in
@@ -63,10 +66,10 @@ export default function DoorMonitorPage() {
                 <img
                   src="/door-monitor/block-diagram.png"
                   alt="Block diagram of the automatic door monitoring system"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 />
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Fig. 1. Block diagram of the automatic door monitoring system
                 </figcaption>
               </figure>
@@ -91,7 +94,7 @@ export default function DoorMonitorPage() {
                 <video
                   controls
                   preload="metadata"
-                  className="w-full rounded-lg border border-[#333333]"
+                  className="w-full rounded-lg border border-border"
                 >
                   <source
                     src="/door-monitor/door-monitor-demo.mp4"
@@ -101,7 +104,7 @@ export default function DoorMonitorPage() {
                   Your browser does not support the video tag.
                 </video>
 
-                <figcaption className="mt-2 text-sm text-gray-400">
+                <figcaption className="mt-2 text-sm text-muted">
                   Video 1. Object detection and piezo alert demo
                 </figcaption>
               </figure>
