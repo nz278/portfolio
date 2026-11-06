@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { formatDate, publishedPosts } from "./blog/posts";
 
 type Project = {
   id: string;
@@ -165,7 +166,7 @@ export default function Home() {
 
             <p className="mt-4 max-w-xl text-lg text-muted">
               ECE undergraduate at Cornell University interested in embedded
-              systems, PCB design, autonomous robotics, and physical computing.
+              systems, PCB design, autonomous robotics, and digital design.
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -186,6 +187,13 @@ export default function Home() {
               >
                 Resume
               </a>
+
+              <Link
+                className="border border-border px-4 py-2 transition hover:border-foreground"
+                href="/blog"
+              >
+                Blog
+              </Link>
             </div>
           </div>
         </div>

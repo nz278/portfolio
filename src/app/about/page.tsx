@@ -50,10 +50,9 @@ export default function AboutPage() {
             I'm primarily interested in working more with digital design and
             embedded systems, as well as learning more about the physical architecture
             behind machine learning systems. In my career, I want to strive toward a
-            human-centered approach to engineering that leaves room for creativity.
-            I think that progress in innovation should be measured by how much we can
-            improve individual lives, and that optimizing efficiency should not be
-            the be-all end-all.
+            human-centered approach to engineering. I think that progress in innovation 
+            should be measured by how much we can improve individual lives, and that 
+            optimizing efficiency should not necessarily be the be-all end-all.
           </p>
         </section>
 
@@ -84,7 +83,7 @@ export default function AboutPage() {
             </div>
 
             <div className="pt-3 text-muted">
-              Currently on UTC-5/-4 ET!
+              Currently on UTC-5/-4 ET
             </div>
           </div>
         </section>

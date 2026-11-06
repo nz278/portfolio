@@ -1,0 +1,155 @@
+.paper-shadow {
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.12))
+    drop-shadow(0 8px 18px rgb(0 0 0 / 0.1));
+}
+
+.paper-sheet {
+  --line: 27px;
+  --margin-x: 100px;
+  --hole-x: 34px;
+  --hole-r: 13px;
+  --header: calc(var(--line) * 3);
+
+  --foreground: #1f2328;
+  --muted: #2a2e35;
+  --accent: #00744d;
+  --secondary: #8a5306;
+  --border: #cdd1d6;
+  --surface: rgb(0 0 0 / 0.035);
+
+  position: relative;
+  color: var(--foreground);
+  background-color: #f7f8f9;
+  background-image: url("/blog-background/margin.png"), url("/blog-background/grain.jpg");
+  background-size: 4px 432px, 512px 512px;
+  background-repeat: repeat-y, repeat;
+  background-position: calc(var(--margin-x) - 2px) 0, 0 0;
+  background-blend-mode: multiply, normal;
+
+  padding: var(--header) 28px calc(var(--line) * 2)
+    calc(var(--margin-x) + 16px);
+
+  font-size: 16px;
+  line-height: var(--line);
+
+  /* punched holes, cut all the way through the sheet */
+  -webkit-mask: radial-gradient(
+      circle var(--hole-r) at var(--hole-x) 144px,
+      #0000 calc(var(--hole-r) - 0.5px),
+      #000 var(--hole-r)
+    )
+    0 0 / 100% 408px repeat-y;
+  mask: radial-gradient(
+      circle var(--hole-r) at var(--hole-x) 144px,
+      #0000 calc(var(--hole-r) - 0.5px),
+      #000 var(--hole-r)
+    )
+    0 0 / 100% 408px repeat-y;
+}
+
+/* blue rules start below the blank header band, printed into the paper.
+   The first rule is the title's baseline, so no line cuts through it. */
+.paper-sheet::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--header) + var(--line)) 0 var(--line) 0;
+  z-index: -1;
+  background: url("/blog-background/rules.png") 0 0 / 800px 432px repeat;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .paper-sheet {
+    --margin-x: 50px;
+    --hole-x: 19px;
+    --hole-r: 9px;
+    padding-right: 16px;
+  }
+}
+
+.paper-sheet .paper-title {
+  position: relative;
+  top: 6.5px;
+  margin: 0;
+  font-size: 36px;
+  line-height: calc(var(--line) * 2);
+  font-weight: 700;
+}
+
+.paper-sheet .paper-meta {
+  position: relative;
+  top: 1.25px;
+  margin: 0 0 var(--line);
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+.paper-prose > * {
+  margin: 0 0 var(--line);
+}
+
+.paper-prose h2 {
+  position: relative;
+  top: -2.5px;
+  margin: calc(var(--line) * 2) 0 0;
+  font-size: 24px;
+  line-height: var(--line);
+  color: var(--secondary);
+}
+
+.paper-prose h3 {
+  margin: var(--line) 0 0;
+  font-size: 18px;
+  line-height: var(--line);
+  font-weight: 600;
+}
+
+.paper-prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.paper-prose ul,
+.paper-prose ol {
+  padding-left: 1.5em;
+}
+.paper-prose ul {
+  list-style: disc;
+}
+.paper-prose ol {
+  list-style: decimal;
+}
+.paper-prose li {
+  margin: 0;
+}
+
+.paper-prose blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1em;
+  font-style: italic;
+}
+
+.paper-prose code {
+  background: var(--surface);
+  padding: 0 0.25em;
+}
+
+.paper-prose img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.paper-prose figcaption {
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .paper-sheet .paper-title {
+    top: 9.5px;
+    font-size: 28px;
+  }
+}
